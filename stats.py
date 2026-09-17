@@ -29,3 +29,13 @@ def transform_char_dict(char_dict: dict[str, int]):
     char_list.sort(reverse=True, key=get_num)
 
     return char_list
+
+def sort_on(char_count: tuple[str, int]) -> int:
+    return char_count[1]
+
+def chars_dict_to_sorted_list(char_dict: dict[str, int]) -> list[tuple[str, int]]: 
+    char_count_list = list()
+    for char in char_dict:
+        count = char_dict[char]
+        char_count_list.append((char, count))
+    return sorted(char_count_list, key=sort_on, reverse=True)
